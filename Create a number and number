@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+
+namespace IO_SAMPLE_file
+{
+    class Program
+    {
+      public static void Main(string[] args)
+        {
+            //file path
+            string inputFilepath = @"F:\\.NET PROGRAM\\Project of Contact Library\\sampleinput.txt";
+           
+
+            //input to user
+            Console.WriteLine("ENTER THE CONTACT NAME & NUMBER");
+            String input = Console.ReadLine();
+
+            File.AppendAllText(inputFilepath, input);
+            Console.WriteLine("SUCCSFULLY SAVED YOUR CONTACT");
+         
+
+            
+
+            //READ A ON FILE
+            StreamReader read = new StreamReader(inputFilepath);
+            string text1 = read.ReadToEnd();
+            Console.WriteLine(text1+"\n");
+            read.Close();
+
+          
+        }
+    }
+} 
